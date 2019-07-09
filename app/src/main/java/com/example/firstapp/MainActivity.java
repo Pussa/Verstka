@@ -1,20 +1,23 @@
 package com.example.firstapp;
 import android.graphics.Color;
 import android.os.Build;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
-
 
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.view.View.OnTouchListener;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +33,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import android.graphics.ColorFilter;
 public class MainActivity extends AppCompatActivity {
-
+    ImageView imgNews ;
+    ImageView imgSearch ;
+    ImageView imgHeart ;
+    ImageView imgHistory;
+    ImageView imgProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +46,58 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        imgNews = findViewById(R.id.img_news);
+        imgSearch = findViewById(R.id.img_search);
+        imgHeart =  findViewById(R.id.img_heart);
+        imgHistory =  findViewById(R.id.img_history);
+        imgProfile =  findViewById(R.id.img_profile);
 
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.news:
+                                imgNews.setVisibility(View.VISIBLE);
+                                imgSearch.setVisibility(View.GONE);
+                                imgHeart.setVisibility(View.GONE);
+                                imgHistory.setVisibility(View.GONE);
+                                imgProfile.setVisibility(View.GONE);
+                                break;
+                            case R.id.search:
+                                imgNews.setVisibility(View.GONE);
+                                imgSearch.setVisibility(View.VISIBLE);
+                                imgHeart.setVisibility(View.GONE);
+                                imgHistory.setVisibility(View.GONE);
+                                imgProfile.setVisibility(View.GONE);
+                                break;
+                            case R.id.history:
+                                imgNews.setVisibility(View.GONE);
+                                imgSearch.setVisibility(View.GONE);
+                                imgHeart.setVisibility(View.GONE);
+                                imgHistory.setVisibility(View.VISIBLE);
+                                imgProfile.setVisibility(View.GONE);
+                                break;
+                            case R.id.help:
+                                imgNews.setVisibility(View.GONE);
+                                imgSearch.setVisibility(View.GONE);
+                                imgHeart.setVisibility(View.VISIBLE);
+                                imgHistory.setVisibility(View.GONE);
+                                imgProfile.setVisibility(View.GONE);
+                                break;
+                            case R.id.profile:
+                                imgNews.setVisibility(View.GONE);
+                                imgSearch.setVisibility(View.GONE);
+                                imgHeart.setVisibility(View.GONE);
+                                imgHistory.setVisibility(View.GONE);
+                                imgProfile.setVisibility(View.VISIBLE);
+                                break;
+                        }
+                        return false;
+                    }
+                });
 
     }
     public void onClick (View view){
