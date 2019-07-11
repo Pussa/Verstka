@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- Цвет фона, предпочтительно как в главной теме -->
+    <item android:drawable="@color/colorPaleGrey"/>
+    <item android:drawable="@drawable/ic_icon_logo"
+        android:gravity="top|center"
+        android:top="178dp"
+        />
+    <item android:drawable="@drawable/ic_logo_mss"
+        android:gravity="center|bottom"
+        android:bottom="88dp"
+        />
+</layer-list>

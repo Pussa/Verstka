@@ -1,52 +1,26 @@
 package com.example.firstapp;
-import android.graphics.Color;
-import android.os.Build;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.content.Intent;
-import android.os.Bundle;
-
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import android.view.View.OnTouchListener;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.widget.TextView;
-import android.widget.ImageView;
-import android.widget.Switch;
-import android.widget.ImageButton;
 
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.graphics.ColorFilter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
-    ImageView imgNews ;
-    ImageView imgSearch ;
-    ImageView imgHeart ;
-    ImageView imgHistory;
-    ImageView imgProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
-        imgNews = findViewById(R.id.img_news);
+        /*imgNews = findViewById(R.id.img_news);
         imgSearch = findViewById(R.id.img_search);
         imgHeart =  findViewById(R.id.img_heart);
         imgHistory =  findViewById(R.id.img_history);
@@ -97,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         return false;
                     }
-                });
+                });*/
 
     }
-    public void onClick (View view){
+   /* public void onClick (View view){
         ImageButton imageButton = findViewById(R.id.imageButton3);
         TextView textView = findViewById(R.id.help);
         if(view.getId()==R.id.imageButton){
@@ -144,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-    }
+    }*/
 
 
 }

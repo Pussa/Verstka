@@ -5,60 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <RelativeLayout
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:src="@drawable/ic_news"
-            android:id="@+id/img_news"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerInParent="true" />
-
-        <ImageView
-            android:src="@drawable/ic_searh"
-            android:id="@+id/img_search"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerInParent="true"
-            android:visibility="gone" />
-
-        <ImageView
-            android:src="@drawable/ic_heart"
-            android:id="@+id/img_heart"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerInParent="true"
-            android:visibility="gone" />
-        <ImageView
-            android:src="@drawable/ic_history1"
-            android:id="@+id/img_history"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerInParent="true"
-            android:visibility="gone" />
-        <ImageView
-            android:src="@drawable/ic_profile"
-            android:id="@+id/img_profile"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerInParent="true"
-            android:visibility="gone" />
-        <android.support.design.widget.BottomNavigationView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/navigation"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_gravity="start"
-            app:itemBackground="@color/colorWhite"
-            app:itemIconTint="@menu/bottom_navigation_item_background_colors"
-            app:itemTextColor="@menu/bottom_navigation_item_background_colors"
-            app:menu="@menu/my_navigation_items" />
-    </RelativeLayout>
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/colorWhite"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/bottom_navigation_item_background_colors"
+        app:itemTextColor="@drawable/bottom_navigation_item_background_colors"
+        app:menu="@menu/my_navigation_items" />
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -194,10 +155,8 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="sans-serif"
-                android:text="Получать  push-уведомления"
+                android:text="Получать push-уведомления"
                 android:textColor="#DE000000"
-                android:textColorHighlight="#66A636"
-                android:textColorLink="#66A636"
                 android:textIsSelectable="true"
                 android:textSize="16sp"
                 android:textStyle="normal" />
@@ -289,131 +248,18 @@
                 android:layout_marginTop="32dp"
                 android:background="#AABBBB"/>
             <Button
-                android:layout_width="166dp"
-                android:layout_height="36dp"
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="97dp"
+                android:layout_marginLeft="77dp"
+                android:gravity="center"
                 android:text="Выйти из аккаунта"
                 android:textColor = "#FFFFFF"
                 android:background="#66A636"
-                android:textSize="14sp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:id="@+id/gray_stick3"
-                android:layout_marginTop="32dp"
-                android:background="#AABBBB"/>
+                android:textSize="14sp" />
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="304dp"
-                android:layout_marginTop="0dp"
-                android:background="#FFFFFF"
-                android:onClick="onClick"
-                app:srcCompat="@drawable/ic_profile" />
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background = "#FFFFFF"
-                android:onClick="onClick"
-                android:layout_marginLeft="232dp"
-                android:layout_marginTop="-40dp"
-                app:srcCompat="@drawable/ic_history1" />
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="163dp"
-                android:layout_marginTop="-40dp"
-                android:onClick="onClick"
-                android:background="#FE7460"
-                app:srcCompat="@drawable/ic_heart" />
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="88dp"
-                android:onClick="onClick"
-                android:background = "#FFFFFF"
-                android:layout_marginTop="-40dp"
-                app:srcCompat="@drawable/ic_searh" />
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:onClick="onClick"
-                android:layout_marginTop="-40dp"
-                app:srcCompat="@drawable/ic_news"
-                android:background = "#FFFFFF"/>
-            <TextView
-                android:id="@+id/news"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textColor="#7DB354"
-                android:gravity="center_horizontal"
-                tools:text="Новости"
-                android:text="Новости"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="16dp"/>
-            <TextView
-                android:id="@+id/search"
-                android:layout_width="72dp"
-                android:layout_height="13dp"
-                android:textSize="11sp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textColor="@color/colorGray"
-                android:gravity="center_horizontal"
-                tools:text="Поиск"
-                android:text="Поиск"
-                android:layout_marginTop="-13dp"
-                android:layout_marginLeft="72dp"/>
-            <TextView
-                android:id="@+id/history"
-                android:layout_width="72dp"
-                android:layout_height="13dp"
-                android:textSize="11sp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textColor="@color/colorGray"
-                android:gravity="center_horizontal"
-                tools:text="История"
-                android:text="История"
-                android:layout_marginTop="-13dp"
-                android:layout_marginLeft="216dp"/>
-            <TextView
-                android:id="@+id/profile"
-                android:layout_width="72dp"
-                android:layout_height="13dp"
-                android:textSize="11sp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textColor="@color/colorGray"
-                android:gravity="center_horizontal"
-                tools:text="Профиль"
-                android:text="Профиль"
-                android:layout_marginTop="-13dp"
-                android:layout_marginLeft="288dp"/>
-            <TextView
-                android:id="@+id/help"
-                android:layout_width="72dp"
-                android:layout_height="13dp"
-                android:textSize="11sp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textColor="@color/colorGray"
-                android:gravity="center_horizontal"
-                tools:text="Помочь"
-                android:text="Помочь"
-                android:layout_marginTop="-13dp"
-                android:layout_marginLeft="147dp"/>
+
 
 
 

@@ -2,9 +2,10 @@
     <string name="app_name">First app</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="news">Новости</string>
-    <string name="search">Поиск</string>
-    <string name="help">Помочь</string> 
-    <string name="history">История</string>
-    <string name="profile">Профиль</string>
+    <string name="news">РќРѕРІРѕСЃС‚Рё</string>
+    <string name="search">РџРѕРёСЃРє</string>
+    <string name="help">РџРѕРјРѕС‡СЊ</string>
+    <string name="history">РСЃС‚РѕСЂРёСЏ</string>
+    <string name="profile">РџСЂРѕС„РёР»СЊ</string>
+    <string name="title_activity_splash">Splash</string>
 </resources>
